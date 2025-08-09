@@ -1,0 +1,329 @@
+{
+  "name": "Manufacturing Operations Management System",
+  "industry": "Manufacturing & Production",
+  "client_example": "Lucky Cement, Engro Corporation, Packages Limited",
+  "estimated_value": "₹30L - ₹70L",
+  "nodes": [
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "process_type",
+              "value": "production_planning"
+            },
+            {
+              "name": "description",
+              "value": "Production planning, capacity management, and resource optimization"
+            },
+            {
+              "name": "integrations",
+              "value": "ERP System, Production Planning Software, MRP Systems"
+            }
+          ]
+        }
+      },
+      "id": "production_planning_node",
+      "name": "Production Planning & Scheduling",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [100, 200]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "process_type",
+              "value": "quality_compliance"
+            },
+            {
+              "name": "description",
+              "value": "ISO compliance, quality standards, safety regulations"
+            },
+            {
+              "name": "integrations",
+              "value": "Quality Management System, ISO Audit Tools, Safety Management"
+            }
+          ]
+        }
+      },
+      "id": "quality_compliance_node",
+      "name": "Quality & Safety Compliance",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [300, 200]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "process_type",
+              "value": "inventory_management"
+            },
+            {
+              "name": "description",
+              "value": "Raw material management, finished goods, warehouse operations"
+            },
+            {
+              "name": "integrations",
+              "value": "Warehouse Management System, Inventory Control, Stock Management"
+            }
+          ]
+        }
+      },
+      "id": "inventory_node",
+      "name": "Inventory & Warehouse Management",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [500, 200]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "process_type",
+              "value": "multi_plant_coordination"
+            },
+            {
+              "name": "description",
+              "value": "Multi-plant operations, supply chain coordination"
+            },
+            {
+              "name": "integrations",
+              "value": "Plant Management Systems, Supply Chain Management, Logistics"
+            }
+          ]
+        }
+      },
+      "id": "plant_coordination_node",
+      "name": "Multi-Plant Coordination",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [700, 200]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "process_type",
+              "value": "production_approval"
+            },
+            {
+              "name": "description",
+              "value": "Production batch approval, quality sign-off, release authorization"
+            },
+            {
+              "name": "integrations",
+              "value": "Production Approval System, Quality Control, Batch Management"
+            }
+          ]
+        }
+      },
+      "id": "production_approval_node",
+      "name": "Production Approval Workflow",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [900, 200]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "process_type",
+              "value": "manufacturing_integration"
+            },
+            {
+              "name": "description",
+              "value": "Integration with ERP, MES, SCADA, and production systems"
+            },
+            {
+              "name": "integrations",
+              "value": "SAP Manufacturing, MES Systems, SCADA, Production Control"
+            }
+          ]
+        }
+      },
+      "id": "manufacturing_integration_node",
+      "name": "Manufacturing Systems Integration",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [1100, 200]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "process_type",
+              "value": "production_monitoring"
+            },
+            {
+              "name": "description",
+              "value": "Real-time production monitoring, equipment performance, downtime tracking"
+            },
+            {
+              "name": "integrations",
+              "value": "SCADA Systems, Equipment Monitoring, Performance Dashboards"
+            }
+          ]
+        }
+      },
+      "id": "production_monitoring_node",
+      "name": "Production Monitoring System",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [1300, 200]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "process_type",
+              "value": "manufacturing_analytics"
+            },
+            {
+              "name": "description",
+              "value": "Production analytics, predictive maintenance, efficiency optimization"
+            },
+            {
+              "name": "integrations",
+              "value": "Manufacturing Analytics, AI-based Maintenance, Performance Analytics"
+            }
+          ]
+        }
+      },
+      "id": "manufacturing_analytics_node",
+      "name": "Manufacturing Analytics & AI",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [1500, 200]
+    }
+  ],
+  "connections": {
+    "Production Planning & Scheduling": {
+      "main": [
+        [
+          {
+            "node": "Quality & Safety Compliance",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Quality & Safety Compliance": {
+      "main": [
+        [
+          {
+            "node": "Inventory & Warehouse Management",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inventory & Warehouse Management": {
+      "main": [
+        [
+          {
+            "node": "Multi-Plant Coordination",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Multi-Plant Coordination": {
+      "main": [
+        [
+          {
+            "node": "Production Approval Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Production Approval Workflow": {
+      "main": [
+        [
+          {
+            "node": "Manufacturing Systems Integration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manufacturing Systems Integration": {
+      "main": [
+        [
+          {
+            "node": "Production Monitoring System",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Production Monitoring System": {
+      "main": [
+        [
+          {
+            "node": "Manufacturing Analytics & AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manufacturing Analytics & AI": {
+      "main": [
+        [
+          {
+            "node": "Production Planning & Scheduling",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "manufacturing_specific_features": {
+    "compliance_requirements": [
+      "ISO 9001 Quality Management",
+      "ISO 14001 Environmental",
+      "OHSAS 18001 Safety",
+      "Good Manufacturing Practices (GMP)",
+      "Local Industrial Regulations"
+    ],
+    "integration_systems": [
+      "SAP Manufacturing Module",
+      "Manufacturing Execution System (MES)",
+      "SCADA Systems",
+      "Warehouse Management System (WMS)",
+      "Enterprise Resource Planning (ERP)"
+    ],
+    "key_processes": [
+      "Production Planning",
+      "Material Requirements Planning (MRP)",
+      "Quality Control & Assurance",
+      "Supply Chain Management",
+      "Preventive Maintenance"
+    ]
+  },
+  "pricing": {
+    "implementation": "₹30,00,000 - ₹50,00,000",
+    "customization": "₹12,00,000 - ₹20,00,000",
+    "annual_support": "₹6,00,000 - ₹15,00,000"
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "1.0"
+}
